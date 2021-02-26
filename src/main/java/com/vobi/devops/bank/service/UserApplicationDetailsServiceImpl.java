@@ -27,7 +27,7 @@ public class UserApplicationDetailsServiceImpl implements UserDetailsService {
 			throw new UsernameNotFoundException(username);
 		}
 
-		if (username.isBlank() == true) {
+		if (username.trim().equals("")) {
 			throw new UsernameNotFoundException(username);
 		}
 
