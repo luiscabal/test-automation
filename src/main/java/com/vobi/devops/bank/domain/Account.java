@@ -26,9 +26,6 @@ import lombok.NoArgsConstructor;
  */
 @Entity
 @Table(name = "account", schema = "public")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Account implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -64,5 +61,55 @@ public class Account implements java.io.Serializable {
 	private List<RegisteredAccount> registeredAccounts = new ArrayList<>();
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "account")
 	private List<Transaction> transactions = new ArrayList<>();
+	public String getAccoId() {
+		return accoId;
+	}
+	public void setAccoId(String accoId) {
+		this.accoId = accoId;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+	public Double getBalance() {
+		return balance;
+	}
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+	public String getEnable() {
+		return enable;
+	}
+	public void setEnable(String enable) {
+		this.enable = enable;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Long getVersion() {
+		return version;
+	}
+	public void setVersion(Long version) {
+		this.version = version;
+	}
+	public List<RegisteredAccount> getRegisteredAccounts() {
+		return registeredAccounts;
+	}
+	public void setRegisteredAccounts(List<RegisteredAccount> registeredAccounts) {
+		this.registeredAccounts = registeredAccounts;
+	}
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+	
+	
 
 }
